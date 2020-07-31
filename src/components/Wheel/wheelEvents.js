@@ -1,19 +1,21 @@
 import ZingTouch from "zingtouch";
 
-let currentAngle = null;
+let prevAngle = null;
+
 const wheelEventsHandler = event => {
-	const eventAngle = Math.floor(event.detail.angle);
-	if (!currentAngle) {
-		currentAngle = eventAngle;
+    const currentAngle = Math.floor(event.detail.angle);
+    
+	if (!prevAngle || !event.detail.distanceFromOrigin) {
+		prevAngle = currentAngle;
 	} else {
-		const angleRotated = eventAngle - currentAngle;
+		const angleRotated = currentAngle - prevAngle;
 		if (Math.abs(angleRotated) > 12) {
 			if (angleRotated < 0) {
 				console.log("Forward");
 			} else {
 				console.log("Backward");
 			}
-			currentAngle = eventAngle;
+			prevAngle = currentAngle;
 		}
 	}
 };

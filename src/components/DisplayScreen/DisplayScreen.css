@@ -1,0 +1,9 @@
+.displayScreen {
+	position: absolute;
+	height: 225px;
+	width: 85%;
+	background-color: #aaa;
+	top: 50%;
+	transform: translateY(-100%);
+	border-radius: 1rem;
+}
