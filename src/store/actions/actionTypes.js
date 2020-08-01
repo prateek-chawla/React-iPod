@@ -1,0 +1,8 @@
+export const MOVE_FORWARD = "MOVE_FORWARD"
+export const MOVE_BACKWARD = "MOVE_BACKWARD";
+
+export const MENU_PRESSED = "MENU_PRESSED"
+export const FWD_PRESSED = "FWD_PRESSED"
+export const BWD_PRESSED = "BWD_PRESSED"
+export const PLAY_PAUSE_PRESSED = "PLAY_PAUSE_PRESSED"
+export const SELECT_PRESSED = "SELECT_PRESSED"
