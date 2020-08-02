@@ -2,13 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 
 import AppDrawer from "../DisplayItems/AppDrawer/AppDrawer";
+import Weather from '../DisplayItems/Weather/Weather'
+import Music from '../DisplayItems/Music/Music'
 
 import "./DisplayScreen.css";
 
 const displayScreen = props => {
 	return (
 		<div className="displayScreen">
-			{props.isAppDrawerOpen ? <AppDrawer /> : props.currentMenuItem}
+			{props.isAppDrawerOpen ? <AppDrawer /> : <Music />}
+				{/* props.currentMenuItem} */}
 		</div>
 	);
 };

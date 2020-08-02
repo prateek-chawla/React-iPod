@@ -37,7 +37,7 @@ const appDrawerReducer = (state = initialState, action) => {
 					isAppDrawerOpen: false,
 				};
 			default:
-				return { ...state };
+				return state;
 		}
 	}
 	if (action.type === actionTypes.MENU_PRESSED) {
@@ -46,5 +46,6 @@ const appDrawerReducer = (state = initialState, action) => {
 			isAppDrawerOpen: true,
 		};
 	}
+	return state;
 };
 export default appDrawerReducer;

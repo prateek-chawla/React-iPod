@@ -1,0 +1,23 @@
+.weather {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.weatherIcon {
+	width: 120px;
+	height: auto;
+}
+
+.weatherDesc {
+	font-size: 1rem;
+	color: #777;
+	text-transform: capitalize;
+}
+
+.weatherTemp {
+	font-size: 2rem;
+}
