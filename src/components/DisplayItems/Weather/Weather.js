@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { convertToCelsius } from "../../../utils";
-
+import {key} from '../../../keys.js'
 import Spinner from "../../UI/Spinner/Spinner";
 
 import "./Weather.css";
@@ -16,7 +16,6 @@ const Weather = props => {
 		const successCallback = position => {
 			const latitude = position.coords.latitude;
 			const longitude = position.coords.longitude;
-			const key = "3ae4d7044dd10f695a3c4859ceba4980";
 
 			const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
 

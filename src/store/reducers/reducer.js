@@ -7,6 +7,8 @@ const initialState = {
 	totalMenuItems: 4,
 	menuItems: ["Music", "Games", "Weather", "Settings"],
 	currentMenuItem: "Music",
+	gameMoveUp: 0,
+	gameMoveDown: 0,
 };
 
 let newMenuItemIndex;
@@ -35,6 +37,22 @@ const appDrawerReducer = (state = initialState, action) => {
 				return {
 					...state,
 					isAppDrawerOpen: false,
+				};
+			default:
+				return state;
+		}
+	}
+	if (!state.isAppDrawerOpen && state.currentMenuItem === "Games") {
+		switch (action.type) {
+			case actionTypes.MOVE_FORWARD:
+				return {
+					...state,
+					gameMoveUp: state.gameMoveUp + 1,
+				};
+			case actionTypes.MOVE_BACKWARD:
+				return {
+					...state,
+					gameMoveDown: state.gameMoveDown + 1,
 				};
 			default:
 				return state;
