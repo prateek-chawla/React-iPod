@@ -1,0 +1,27 @@
+.container {
+	overflow: hidden;
+	height: 225px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.countdown {
+	text-align: center;
+	border-radius: 50%;
+	font-size: 2rem;
+	animation: animate-counter 1s ease-out infinite;
+	font-weight: bold;
+}
+
+@keyframes animate-counter {
+    from {
+        font-size: 5rem;
+		opacity: 1;
+	}
+	to {
+        font-size: 2rem;
+		opacity: 0.3;
+	}
+}

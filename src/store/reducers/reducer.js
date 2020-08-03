@@ -14,6 +14,12 @@ const initialState = {
 let newMenuItemIndex;
 
 const appDrawerReducer = (state = initialState, action) => {
+	if (action.type === actionTypes.MENU_PRESSED) {
+		return {
+			...state,
+			isAppDrawerOpen: true,
+		};
+	}
 	if (state.isAppDrawerOpen) {
 		switch (action.type) {
 			case actionTypes.MOVE_FORWARD:
@@ -57,12 +63,6 @@ const appDrawerReducer = (state = initialState, action) => {
 			default:
 				return state;
 		}
-	}
-	if (action.type === actionTypes.MENU_PRESSED) {
-		return {
-			...state,
-			isAppDrawerOpen: true,
-		};
 	}
 	return state;
 };
