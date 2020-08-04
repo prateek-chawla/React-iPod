@@ -1,0 +1,25 @@
+.track {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 65px;
+    border: 1px solid yellow;
+}
+
+.trackImage {
+    width: 65px;
+	height: auto;
+}
+
+.trackName {
+	white-space: nowrap;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/* Hide Scrollbar */
+::-webkit-scrollbar{
+    width: 0;
+    background:transparent;
+}
