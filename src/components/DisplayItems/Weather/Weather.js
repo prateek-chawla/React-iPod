@@ -28,12 +28,17 @@ const Weather = props => {
 					const icon = res.data.weather[0].icon;
 					const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 					setWeatherData({ temperature, desc, iconUrl });
-					setShowSpinner(false);
 				})
 				.catch(err => console.log(err));
 		};
 		navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 	}, []);
+
+	useEffect(() => {
+		// Weather Data has been fetched
+		if (Object.keys(weatherData).length > 0)
+			setShowSpinner(false)
+	}, [weatherData])
 
 	const weatherContent = (
 		<>
