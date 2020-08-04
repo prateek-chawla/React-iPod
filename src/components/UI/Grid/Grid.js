@@ -1,12 +1,14 @@
-import React from "react";
+import React, { Children } from "react";
 
 import "./Grid.css";
 
 const grid = props => {
+	const nRows = Math.floor(Children.count(props.children) / props.nCols);
+
 	const gridStyle = {
-        gridTemplateColumns: `repeat(${props.nCols},1fr)`,
-        gridTemplateRows: `repeat(${props.nRows},${props.rowHeight})`,
-        gap:`${props.gap}`
+		gridTemplateColumns: `repeat(${props.nCols},1fr)`,
+		gridTemplateRows: `repeat(${nRows},${props.rowHeight})`,
+		gap: `${props.gap}`,
 	};
 
 	return (

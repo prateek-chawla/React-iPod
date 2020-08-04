@@ -1,17 +1,3 @@
-.AppDrawer {
-	display: grid;
-	padding: 1.5rem;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(2, calc((225px - 3rem - 1rem) / 2));
-	gap: 1rem;
-	justify-content: center;
-	align-content: center;
-}
-
-.AppDrawer div {
-	background-color: yellow;
-}
-
 .active {
 	border: 4px solid #000;
 }

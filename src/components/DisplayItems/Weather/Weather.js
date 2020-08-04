@@ -41,7 +41,7 @@ const Weather = props => {
 	}, [weatherData])
 
 	const weatherContent = (
-		<>
+		<> 
 			<img className="weatherIcon" src={weatherData.iconUrl} alt="Weather Icon" />
 			<div className="weatherTemp">{weatherData.temperature}</div>
 			<div className="weatherDesc">{weatherData.desc}</div>
