@@ -1,17 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
-import Game from "./Game/Game";
+import BallGame from "./BallGame/BallGame";
 import Countdown from "./Countdown/Countdown";
 
 const Games = props => {
-	const [gameLoading, setGameLoading] = useState(true);
-	useEffect(() => {
-		setTimeout(() => {
-			setGameLoading(false);
-		}, 3000);
-	}, []);
+    const countdown = useRef(null);
 
-	return gameLoading ? <Countdown seconds={3} /> : <Game />;
+	const [gameLoading, setGameLoading] = useState(true);
+
+	useEffect(() => {
+        if (gameLoading) {
+			countdown.current = setTimeout(() => {
+				setGameLoading(false);
+			}, 3000);
+		}
+
+        return () => clearTimeout(countdown.current)
+	}, [gameLoading]);
+
+	return gameLoading ? (
+		<Countdown seconds={3} />
+	) : (
+		<BallGame restartGame={setGameLoading} />
+	);
 };
 
 export default Games;

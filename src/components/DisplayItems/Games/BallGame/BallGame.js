@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 
-import "./Game.css";
+import "./BallGame.css";
 
-const Game = props => {
+const BallGame = props => {
 	const ballRef = useRef(null);
 	const blockRef = useRef(null);
 	const pillarRef = useRef(null);
 	const checkGameInterval = useRef(null);
 	const scoreRef = useRef(0);
+	const { restartGame } = props;
 
 	const [gameEnded, setGameEnded] = useState(false);
 
@@ -53,6 +54,14 @@ const Game = props => {
 		}
 	}, [props.moveDown]);
 
+	// Restart Game
+	useEffect(() => {
+		// Game Ended
+		if (!ballRef.current) {
+			restartGame(true);
+		}
+	}, [props.selectPressed, restartGame]);
+
 	const game = (
 		<div id="gameArea">
 			<div id="ball" ref={ballRef} />
@@ -62,9 +71,24 @@ const Game = props => {
 		</div>
 	);
 
-	return gameEnded ? <div>Score {Math.floor(scoreRef.current)}</div> : game;
+	return gameEnded ? (
+		<div>Score {Math.floor(scoreRef.current)} Play Again?</div>
+	) : (
+		game
+	);
 };
 
+const mapStateToProps = state => {
+	return {
+		moveUp: state.gameMoveUp,
+		moveDown: state.gameMoveDown,
+		selectPressed: state.gameSelectPressed,
+	};
+};
+
+export default connect(mapStateToProps)(BallGame);
+
+// Game Utility Functions
 const getRandomHeight = () => {
 	const random = Math.random() * 100;
 	return random + 25 + "px";
@@ -90,11 +114,3 @@ const detectCollision = (ballTopPosition, pillarLeftPosition, blockTopPosition) 
 
 	return false;
 };
-
-const mapStateToProps = state => {
-	return {
-		moveUp: state.gameMoveUp,
-		moveDown: state.gameMoveDown,
-	};
-};
-export default connect(mapStateToProps)(Game);

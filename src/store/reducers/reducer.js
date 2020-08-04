@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+// import { combineReducers } from "redux";
 import * as actionTypes from "../actions/actionTypes";
 const initialState = {
 	isAppDrawerOpen: true,
@@ -7,8 +7,10 @@ const initialState = {
 	totalMenuItems: 4,
 	menuItems: ["Music", "Games", "Weather", "Settings"],
 	currentMenuItem: "Music",
+
 	gameMoveUp: 0,
 	gameMoveDown: 0,
+	gameSelectPressed: 0,
 };
 
 let newMenuItemIndex;
@@ -59,6 +61,11 @@ const appDrawerReducer = (state = initialState, action) => {
 				return {
 					...state,
 					gameMoveDown: state.gameMoveDown + 1,
+				};
+			case actionTypes.SELECT_PRESSED:
+				return {
+					...state,
+					gameSelectPressed: state.gameSelectPressed + 1,
 				};
 			default:
 				return state;
