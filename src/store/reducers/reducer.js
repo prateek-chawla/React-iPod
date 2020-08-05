@@ -11,9 +11,15 @@ const initialState = {
 	gameMoveUp: 0,
 	gameMoveDown: 0,
 	gameSelectPressed: 0,
+
+	tracks: null,
+	loading: false,
+	error: null,
+	cuurentTrackIndex: 0,
+	currentTrackID: null,
 };
 
-let newMenuItemIndex;
+let newMenuItemIndex, newCurrentTrackIndex;
 
 const appDrawerReducer = (state = initialState, action) => {
 	if (action.type === actionTypes.MENU_PRESSED) {
@@ -48,6 +54,47 @@ const appDrawerReducer = (state = initialState, action) => {
 				};
 			default:
 				return state;
+		}
+	}
+	if (!state.isAppDrawerOpen && state.currentMenuItem === "Music") {
+		switch (action.type) {
+			case actionTypes.FETCH_TRACKS_START:
+				return {
+					...state,
+					loading: true,
+				};
+			case actionTypes.FETCH_TRACKS_SUCCESS:
+				return {
+					...state,
+					loading: false,
+					tracks: action.tracks,
+					cuurentTrackIndex: 0,
+					currentTrackID: action.tracks[0].id,
+				};
+			case actionTypes.FETCH_TRACKS_FAILED:
+				return {
+					...state,
+					loading: false,
+					error: action.error,
+				};
+			case actionTypes.MOVE_FORWARD:
+				if(!state.tracks)
+					return state
+				newCurrentTrackIndex = (state.cuurentTrackIndex + 1) % state.tracks.length;
+				return {
+					...state,
+					cuurentTrackIndex: newCurrentTrackIndex,
+					currentTrackID:state.tracks[newCurrentTrackIndex].id
+				};
+			case actionTypes.MOVE_BACKWARD:
+				if(!state.tracks)
+					return state
+				newCurrentTrackIndex = (state.cuurentTrackIndex - 1) % state.tracks.length;
+				return {
+					...state,
+					cuurentTrackIndex: newCurrentTrackIndex,
+					currentTrackID:state.tracks[newCurrentTrackIndex].id
+				};
 		}
 	}
 	if (!state.isAppDrawerOpen && state.currentMenuItem === "Games") {
