@@ -6,7 +6,8 @@ export {
 	bwdBtnPressed,
 	selectBtnPressed,
 	playPauseBtnPressed,
-	fetchTracks
+	fetchTracks,
+	resetNowPlaying
 } from "./actionCreators";
 
 

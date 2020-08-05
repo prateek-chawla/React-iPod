@@ -15,8 +15,12 @@ const initialState = {
 	tracks: null,
 	loading: false,
 	error: null,
-	cuurentTrackIndex: 0,
+	currentTrackIndex: 0,
 	currentTrackID: null,
+
+	isNowPlayingOpen: false,
+	nowPlayingTrack: null,
+	togglePlay: 0,
 };
 
 let newMenuItemIndex, newCurrentTrackIndex;
@@ -28,6 +32,14 @@ const appDrawerReducer = (state = initialState, action) => {
 			isAppDrawerOpen: true,
 		};
 	}
+	if (action.type === actionTypes.RESET_NOW_PLAYING) {
+		return {
+			...state,
+			isNowPlayingOpen: false,
+			nowPlayingTrack: null,
+		};
+	}
+
 	if (state.isAppDrawerOpen) {
 		switch (action.type) {
 			case actionTypes.MOVE_FORWARD:
@@ -68,7 +80,7 @@ const appDrawerReducer = (state = initialState, action) => {
 					...state,
 					loading: false,
 					tracks: action.tracks,
-					cuurentTrackIndex: 0,
+					currentTrackIndex: 0,
 					currentTrackID: action.tracks[0].id,
 				};
 			case actionTypes.FETCH_TRACKS_FAILED:
@@ -78,23 +90,62 @@ const appDrawerReducer = (state = initialState, action) => {
 					error: action.error,
 				};
 			case actionTypes.MOVE_FORWARD:
-				if(!state.tracks)
-					return state
-				newCurrentTrackIndex = (state.cuurentTrackIndex + 1) % state.tracks.length;
+				if (state.loading) return state;
+				newCurrentTrackIndex = (state.currentTrackIndex + 1) % state.tracks.length;
+
 				return {
 					...state,
-					cuurentTrackIndex: newCurrentTrackIndex,
-					currentTrackID:state.tracks[newCurrentTrackIndex].id
+					currentTrackIndex: newCurrentTrackIndex,
+					currentTrackID: state.tracks[newCurrentTrackIndex].id,
 				};
 			case actionTypes.MOVE_BACKWARD:
-				if(!state.tracks)
-					return state
-				newCurrentTrackIndex = (state.cuurentTrackIndex - 1) % state.tracks.length;
+				if (state.loading) return state;
+				newCurrentTrackIndex =
+					(state.currentTrackIndex - 1 + state.tracks.length) % state.tracks.length;
+
 				return {
 					...state,
-					cuurentTrackIndex: newCurrentTrackIndex,
-					currentTrackID:state.tracks[newCurrentTrackIndex].id
+					currentTrackIndex: newCurrentTrackIndex,
+					currentTrackID: state.tracks[newCurrentTrackIndex].id,
 				};
+			case actionTypes.SELECT_PRESSED:
+				if (state.loading) return state;
+				if (state.isNowPlayingOpen) {
+					return {
+						...state,
+						togglePlay: state.togglePlay + 1,
+					};
+				} else {
+					return {
+						...state,
+						isNowPlayingOpen: true,
+						nowPlayingTrack: state.tracks[state.currentTrackIndex],
+					};
+				}
+			case actionTypes.FWD_PRESSED:
+				if (state.isNowPlayingOpen) {
+					newCurrentTrackIndex = (state.currentTrackIndex + 1) % state.tracks.length;
+
+					return {
+						...state,
+						currentTrackIndex: newCurrentTrackIndex,
+						currentTrackID: state.tracks[newCurrentTrackIndex].id,
+						nowPlayingTrack: state.tracks[state.currentTrackIndex],
+					};
+				}
+			case actionTypes.BWD_PRESSED:
+				if (state.isNowPlayingOpen) {
+					newCurrentTrackIndex =
+						(state.currentTrackIndex - 1 + state.tracks.length) %
+						state.tracks.length;
+
+					return {
+						...state,
+						currentTrackIndex: newCurrentTrackIndex,
+						currentTrackID: state.tracks[newCurrentTrackIndex].id,
+						nowPlayingTrack: state.tracks[state.currentTrackIndex],
+					};
+				}
 		}
 	}
 	if (!state.isAppDrawerOpen && state.currentMenuItem === "Games") {

@@ -100,3 +100,9 @@ const formatTracks = async dispatch => {
 		dispatch(fetchTracksFailed(error));
 	}
 };
+
+export const resetNowPlaying = () => {
+	return {
+		type: actionTypes.RESET_NOW_PLAYING
+	};
+};
