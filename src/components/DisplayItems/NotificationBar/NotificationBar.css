@@ -1,0 +1,23 @@
+.NotificationBar{
+    height: 25px;
+    width: 100%;
+    background: #4e4e4e;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    color: white;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.icons i{
+    margin-left: 0.4rem;
+}

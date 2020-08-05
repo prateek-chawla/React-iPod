@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import NotificationBar from "../DisplayItems/NotificationBar/NotificationBar"
 import AppDrawer from "../DisplayItems/AppDrawer/AppDrawer";
 import Weather from "../DisplayItems/Weather/Weather";
 import Music from "../DisplayItems/Music/Music";
@@ -20,6 +21,7 @@ const displayScreen = props => {
 	const MenuItem = MenuItems[props.currentMenuItem] ;
 	return (
 		<div className="displayScreen">
+			<NotificationBar />
 			{props.isAppDrawerOpen ? <AppDrawer /> : <MenuItem />}
 		</div>
 	);

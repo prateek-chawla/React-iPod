@@ -1,13 +1,10 @@
 .Grid {
     display: grid;
-    /* box-sizing: border-box; */
-    /* padding: 1.5rem;x     */
     padding: 0 1.5rem;
+    padding-top: 25px;
     height: calc(225px - 3rem);
 	justify-content: center;
-    /* align-content: center; */
     overflow-y: auto;
-    /* border: 1px solid red; */
     top: 50%;
     transform: translateY(-50%);
     position: relative;

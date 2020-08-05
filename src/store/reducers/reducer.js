@@ -109,6 +109,7 @@ const appDrawerReducer = (state = initialState, action) => {
 					currentTrackID: state.tracks[newCurrentTrackIndex].id,
 				};
 			case actionTypes.SELECT_PRESSED:
+			case actionTypes.PLAY_PAUSE_PRESSED:
 				if (state.loading) return state;
 				if (state.isNowPlayingOpen) {
 					return {
