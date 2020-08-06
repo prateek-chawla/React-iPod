@@ -1,3 +1,4 @@
+// Action Creators for Music
 import axios from "axios";
 import * as actionTypes from "./actionTypes";
 
@@ -30,6 +31,7 @@ export const fetchTracks = () => {
 	};
 };
 
+// Fetch and Format Tracks Object
 const formatTracks = async dispatch => {
 	try {
 		const response = await axios.get(

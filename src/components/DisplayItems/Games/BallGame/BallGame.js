@@ -4,25 +4,31 @@ import { connect } from "react-redux";
 import "./BallGame.css";
 
 const BallGame = props => {
+	// DOM References
 	const ballRef = useRef(null);
 	const blockRef = useRef(null);
 	const pillarRef = useRef(null);
-	const checkGameInterval = useRef(null);
 	const scoreRef = useRef(0);
+
+	const checkGameInterval = useRef(null);
 	const { restartGame } = props;
 
+	// Load Retry/Score screen if game has ended
 	const [gameEnded, setGameEnded] = useState(false);
 
 	useEffect(() => {
+		// Keep track of Score
 		scoreRef.current = 0;
 
 		const changeBlockHeight = () => {
 			blockRef.current.style.top = getRandomHeight();
 		};
 
+		// Change obstacle height after each animation
 		pillarRef.current.addEventListener("animationiteration", changeBlockHeight);
 
 		checkGameInterval.current = setInterval(() => {
+			// Get Positions
 			const ballTopPosition = parseFloat(getComputedStyle(ballRef.current).top);
 			const blockTopPosition = parseFloat(getComputedStyle(blockRef.current).top);
 			const pillarLeftPosition = parseFloat(
@@ -39,14 +45,14 @@ const BallGame = props => {
 
 		return () => clearInterval(checkGameInterval.current);
 	}, []);
-
+	// Move Up
 	useEffect(() => {
 		if (ballRef.current) {
 			const ballPosition = parseFloat(getComputedStyle(ballRef.current).top);
 			ballRef.current.style.top = ballPosition - 8 + "px";
 		}
 	}, [props.moveUp]);
-
+	// Move Down
 	useEffect(() => {
 		if (ballRef.current) {
 			const ballPosition = parseFloat(getComputedStyle(ballRef.current).top);
@@ -71,16 +77,14 @@ const BallGame = props => {
 		</div>
 	);
 
-	return gameEnded ? (
+	const resultScreen = (
 		<div className="gameResult">
-			<div className="score">
-				Score {Math.floor(scoreRef.current)}
-			</div>
-				Play Again?
+			<div className="score">Score {Math.floor(scoreRef.current)}</div>
+			Play Again?
 		</div>
-	) : (
-		game
 	);
+
+	return gameEnded ? resultScreen : game;
 };
 
 const mapStateToProps = state => {

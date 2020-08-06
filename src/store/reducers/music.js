@@ -1,3 +1,4 @@
+// Reducer for Music
 import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
@@ -30,6 +31,7 @@ const musicReducer = (state = initialState, action) => {
 					...state,
 					loading: true,
 				};
+			// Set Tracks Object
 			case actionTypes.FETCH_TRACKS_SUCCESS:
 				return {
 					...state,
@@ -38,12 +40,14 @@ const musicReducer = (state = initialState, action) => {
 					currentTrackIndex: 0,
 					currentTrackID: action.tracks[0].id,
 				};
+			// Set Error On Failure
 			case actionTypes.FETCH_TRACKS_FAILED:
 				return {
 					...state,
 					loading: false,
 					error: action.error,
 				};
+			// Move Forward in Music Library
 			case actionTypes.MOVE_FORWARD:
 				if (state.loading) return state;
 				newCurrentTrackIndex = (state.currentTrackIndex + 1) % state.tracks.length;
@@ -53,6 +57,7 @@ const musicReducer = (state = initialState, action) => {
 					currentTrackIndex: newCurrentTrackIndex,
 					currentTrackID: state.tracks[newCurrentTrackIndex].id,
 				};
+			// Move Backward in Music Library
 			case actionTypes.MOVE_BACKWARD:
 				if (state.loading) return state;
 				newCurrentTrackIndex =
@@ -63,6 +68,7 @@ const musicReducer = (state = initialState, action) => {
 					currentTrackIndex: newCurrentTrackIndex,
 					currentTrackID: state.tracks[newCurrentTrackIndex].id,
 				};
+			// Toggle Play/Pause
 			case actionTypes.SELECT_PRESSED:
 			case actionTypes.PLAY_PAUSE_PRESSED:
 				if (state.loading) return state;

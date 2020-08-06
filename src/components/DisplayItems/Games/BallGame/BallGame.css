@@ -10,6 +10,7 @@
 	background-size: cover;
 }
 
+/* Bird Character */
 #ball {
 	width: 25px;
 	height: 25px;
@@ -23,6 +24,7 @@
 	z-index: 1;
 }
 
+/* Obstacles  */
 #pillar {
 	position: relative;
 	background: #353567;
@@ -34,6 +36,7 @@
 	animation: animate-pillar 2.5s linear infinite;
 }
 
+/* Allowed Spaces */
 #block {
 	position: relative;
 	border-top: 1px solid gray;
@@ -44,6 +47,7 @@
 	top: 50%;
 }
 
+/* Result - Score Screen */
 .gameResult{
 	height: 210px;
 	width: 100%;
@@ -60,6 +64,8 @@
 	font-weight: 550;
 }
 
+
+/* Move Obstacle from Right to Left */
 @keyframes animate-pillar {
 	0% {
 		left: 100%;

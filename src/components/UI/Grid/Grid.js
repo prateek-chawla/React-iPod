@@ -1,7 +1,8 @@
-import React, { Children } from "react";
+import React, { Children, Component } from "react";
 
 import "./Grid.css";
 
+// Custom Grid Component
 const grid = props => {
 	const nRows = Math.floor(Children.count(props.children) / props.nCols);
 

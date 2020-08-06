@@ -2,6 +2,7 @@ import ZingTouch from "zingtouch";
 
 let prevAngle = null;
 
+// Wheel Events Handler
 const wheelEventsHandler = (event, onMoveForward, onMoveBackward) => {
 	const currentAngle = Math.floor(event.detail.angle);
 
@@ -11,10 +12,13 @@ const wheelEventsHandler = (event, onMoveForward, onMoveBackward) => {
 		const angleRotated = currentAngle - prevAngle;
 		if (Math.abs(angleRotated) > 12) {
 			if (angleRotated < 0) {
+				// Rotated Clockwise 12deg
 				onMoveForward();
 			} else {
+				// Rotated Counter-Clockwise 12deg
 				onMoveBackward();
 			}
+			// Update Angle
 			prevAngle = currentAngle;
 		}
 	}

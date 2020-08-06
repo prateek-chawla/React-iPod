@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 
+import ErrorScreen from "../../../UI/Error/Error";
 import Spinner from "../../../UI/Spinner/Spinner";
 import Grid from "../../../UI/Grid/Grid";
 
@@ -9,14 +10,16 @@ import * as actions from "../../../../store/actions";
 import "./MusicLibrary.css";
 
 const MusicLibrary = props => {
-	
+	// Cuurent Track Selection
 	const currentTrackRef = useRef(null);
 	const { currentTrackID, fetchTracks } = props;
 
+	// Fetch Songs from Napster API
 	useEffect(() => {
 		fetchTracks();
 	}, [fetchTracks]);
 
+	// Scroll when a new track is selected
 	useEffect(() => {
 		if (currentTrackRef.current)
 			currentTrackRef.current.scrollIntoView(false, { behaviour: "smooth" });
@@ -30,9 +33,11 @@ const MusicLibrary = props => {
 
 	let musicLibrary = (
 		<Grid nCols={3} gap={"0.5rem"} rowHeight={"85px"}>
+			{/* Music Library Tracks from Napster API */}
 			{props.tracks &&
 				props.tracks.map(track => {
 					const trackProperties = {};
+					// Check if this track is the one currently selected
 					if (track.id === props.currentTrackID) {
 						trackProperties.className = "track activeTrack";
 						trackProperties.ref = currentTrackRef;
@@ -49,8 +54,7 @@ const MusicLibrary = props => {
 	);
 
 	if (props.error) {
-		console.log(props.error);
-		musicLibrary = <div>Error</div>;
+		musicLibrary = <ErrorScreen error={"Error Fetching Music"} />;
 	}
 
 	return props.loading ? spinner : musicLibrary;

@@ -1,4 +1,7 @@
+// Combine Reducers into rootReducer
+
 import { combineReducers } from "redux";
+
 import appDrawerReducer from './appDrawer'
 import gamesReducer from './games'
 import musicReducer from './music'

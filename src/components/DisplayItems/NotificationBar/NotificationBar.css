@@ -1,3 +1,4 @@
+/* NotificationBar container */
 .NotificationBar{
     height: 25px;
     width: 100%;
@@ -12,6 +13,7 @@
     z-index: 1;
 }
 
+/* Wifi and Battery Icons */
 .icons{
     display: flex;
     justify-content: space-around;

@@ -1,3 +1,4 @@
+// Reducer for AppDrawer
 import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
@@ -19,6 +20,7 @@ const appDrawerReducer = (state = initialState, action) => {
 	}
 	if (action.isAppDrawerOpen) {
 		switch (action.type) {
+			// Move Forward
 			case actionTypes.MOVE_FORWARD:
 				newMenuItemIndex = (state.currentMenuItemIndex + 1) % state.totalMenuItems;
 				return {
@@ -26,7 +28,8 @@ const appDrawerReducer = (state = initialState, action) => {
 					currentMenuItemIndex: newMenuItemIndex,
 					currentMenuItem: state.menuItems[newMenuItemIndex],
 				};
-			case actionTypes.MOVE_BACKWARD:
+			// Move Backward
+				case actionTypes.MOVE_BACKWARD:
 				newMenuItemIndex =
 					(state.currentMenuItemIndex - 1 + state.totalMenuItems) %
 					state.totalMenuItems;

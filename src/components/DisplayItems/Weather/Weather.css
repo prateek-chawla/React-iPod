@@ -1,3 +1,4 @@
+/* Weather Container */
 .weather {
 	height: 210px;
 	display: flex;
@@ -7,6 +8,7 @@
 	flex-wrap: nowrap;
 }
 
+/* Weather Icon fetched from OWM API */
 .weatherIcon {
 	width: 120px;
 	height: auto;
@@ -19,6 +21,7 @@
 	text-transform: capitalize;
 }
 
+/* Temperature */
 .weatherTemp {
 	font-size: 2rem;
 	color: #444;

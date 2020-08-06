@@ -9,6 +9,8 @@ import App from "./App";
 
 import "./index.css";
 
+// Custom Thunk Middleware
+// Make isAppDrawerOpen and currentMenuItem available to all reducers
 const customThunkMiddleWare = ({ dispatch, getState }) => next => action => {
 	if (typeof action === "function") return action(dispatch, getState);
 
@@ -18,6 +20,7 @@ const customThunkMiddleWare = ({ dispatch, getState }) => next => action => {
 	return next(action);
 };
 
+// Create Store with Redux Devtools Extension
 const store = createStore(
 	rootReducer,
 	composeWithDevTools(applyMiddleware(customThunkMiddleWare))

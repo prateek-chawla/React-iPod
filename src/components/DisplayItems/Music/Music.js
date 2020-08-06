@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import NowPlaying from "./NowPlaying/NowPlaying";
 import MusicLibrary from "./Library/MusicLibrary";
 
+// Music Container
 const Music = props => {
 	return props.isNowPlayingOpen ? <NowPlaying /> : <MusicLibrary />;
 };

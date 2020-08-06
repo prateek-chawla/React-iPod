@@ -1,3 +1,4 @@
+/* Container */
 .NowPlaying {
 	height: 210px;
 	display: flex;
@@ -6,20 +7,26 @@
 	align-items: center;
 }
 
+/* Album Art */
 .nowPlayingImg {
 	width: 120px;
 	height: auto;
 	border-radius: 5%;
 	position: relative;
 }
+
+/* Track Name */
 .nowPlayingName {
 	margin-top: 0.6rem;
 }
+
+/* Track Artist */
 .nowPlayingArtist {
     font-size: 0.8rem;
     color: #444;
 }
 
+/* Play/Pause Icon */
 .nowPlayingIcon {
 	position: absolute;
 	top: 100%;

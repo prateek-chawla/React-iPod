@@ -1,6 +1,7 @@
 import React from "react";
 import "./Spinner.css";
 
+// UI Spinner/Loader
 const spinner = props => (
 	<div className="spinner">
 		<div className="circle1" />

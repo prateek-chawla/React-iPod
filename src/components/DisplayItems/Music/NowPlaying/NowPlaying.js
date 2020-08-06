@@ -12,18 +12,21 @@ const NowPlaying = props => {
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	useEffect(() => {
+		// Reset Current Track when exiting
 		return () => {
 			resetNowPlaying();
 		};
 	}, [resetNowPlaying]);
 
 	useEffect(() => {
+		// Toggle Play/Pause
 		if (isPlaying && !trackRef.current.paused) trackRef.current.pause();
 		else if (trackRef.current.paused) trackRef.current.play();
 		setIsPlaying(!isPlaying);
 	}, [props.togglePlay]);
 
 	useEffect(() => {
+		// Play New Track
 		if (trackRef.current) {
 			setIsPlaying(true);
 			trackRef.current.play();
@@ -32,12 +35,15 @@ const NowPlaying = props => {
 
 	const playIcon = <i className="fas fa-play"></i>;
 	const pauseIcon = <i className="fas fa-pause"></i>;
+
 	return (
 		<div className="NowPlaying">
+
 			<div className="nowPlayingImg">
 				<img className="nowPlayingImg" src={props.track.imageUrl} alt="Album Art" />
 				<div className="nowPlayingIcon">{isPlaying ? pauseIcon : playIcon}</div>
 			</div>
+
 			<div className="nowPlayingName">{props.track.name}</div>
 			<div className="nowPlayingArtist">{props.track.artist}</div>
 			<audio ref={trackRef} src={props.track.songUrl} />

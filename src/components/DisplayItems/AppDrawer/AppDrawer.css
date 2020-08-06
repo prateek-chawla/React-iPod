@@ -1,9 +1,11 @@
+/* Active App Drawer Item */
 .active {
 	background-color: rgba(0, 0, 0, 0.2);
 	color: lightgrey;
 	animation: shake 0.7s ease;
 }
 
+/* Inactive App Drawer Item */
 .inactive {
 	opacity: 0.7;
 }
@@ -26,6 +28,7 @@
 	transition: 0.2s ease;
 }
 
+/* Shake Animation for Icons */
 @keyframes shake {
   10%, 30%, 50%, 70%, 90% {
     transform: translate3d(-2px, 0px, 0);

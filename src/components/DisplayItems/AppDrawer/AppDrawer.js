@@ -10,15 +10,20 @@ import MusicIcon from "../../../assets/icons/Music.png";
 import "./AppDrawer.css";
 
 const appDrawer = props => {
+
+	// App Drawer Icon Images
 	const icons = {
 		Settings: SettingsIcon,
 		Games: GamesIcon,
 		Weather: WeatherIcon,
 		Music: MusicIcon,
 	};
+
 	return (
 		<Grid nCols={2} rowHeight={"80px"} gap={"1rem"}>
+			{/* App Drawer Icons */}
 			{props.menuItems.map(menuItem => {
+				// Highlight Current App Icon
 				const styles =
 					menuItem === props.currentMenuItem
 						? "icon-container active"

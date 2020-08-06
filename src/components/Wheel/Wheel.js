@@ -9,10 +9,11 @@ import * as actions from "../../store/actions";
 class Wheel extends Component {
 	constructor(props) {
 		super(props);
+		// DOM Reference to Wheel
 		this.wheelRef = React.createRef();
 	}
 	componentDidMount() {
-		//Change to store.props on connecting
+		// Separate Wheel Events Handler
 		setUpWheelEvents(
 			this.wheelRef.current,
 			this.props.onMoveForward,
