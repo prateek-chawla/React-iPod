@@ -32,20 +32,20 @@ const NowPlaying = props => {
 	const playIcon = <i className="fas fa-play"></i>;
 	const pauseIcon = <i className="fas fa-pause"></i>;
 	return (
-		<>
+		<div className="NowPlaying">
 			<img src={props.track.imageUrl} alt="Album Art" />
 			<div>{props.track.name}</div>
 			<div>{props.track.artist}</div>
 			<audio ref={trackRef} src={props.track.songUrl} />
 			{isPlaying ? pauseIcon : playIcon}
-		</>
+		</div>
 	);
 };
 
 const mapStateToProps = state => {
 	return {
-		track: state.nowPlayingTrack,
-		togglePlay: state.togglePlay,
+		track: state.music.nowPlayingTrack,
+		togglePlay: state.music.togglePlay,
 	};
 };
 

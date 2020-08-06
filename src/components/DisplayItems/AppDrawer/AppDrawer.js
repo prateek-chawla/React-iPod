@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Grid from '../../UI/Grid/Grid'
+import Grid from "../../UI/Grid/Grid";
 
 import "./AppDrawer.css";
 
@@ -9,7 +9,11 @@ const appDrawer = props => {
 		<Grid nCols={2} rowHeight={"80px"} gap={"1rem"}>
 			{props.menuItems.map(menuItem => {
 				const styles = menuItem === props.currentMenuItem ? "active" : "inactive";
-				return <div className={styles} key={menuItem}>{menuItem}</div>;
+				return (
+					<div className={styles} key={menuItem}>
+						{menuItem}
+					</div>
+				);
 			})}
 		</Grid>
 	);
@@ -17,8 +21,8 @@ const appDrawer = props => {
 
 const mapStateToProps = state => {
 	return {
-		menuItems: state.menuItems,
-		currentMenuItem: state.currentMenuItem,
+		menuItems: state.appDrawer.menuItems,
+		currentMenuItem: state.appDrawer.currentMenuItem,
 	};
 };
 

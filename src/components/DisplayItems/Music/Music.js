@@ -9,7 +9,7 @@ const Music = props => {
 };
 
 const mapStateToProps = state => {
-	return { isNowPlayingOpen: state.isNowPlayingOpen };
+	return { isNowPlayingOpen: state.music.isNowPlayingOpen };
 };
 
 export default connect(mapStateToProps)(Music);

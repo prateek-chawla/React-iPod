@@ -49,10 +49,10 @@ const MusicLibrary = props => {
 
 const mapStateToProps = state => {
 	return {
-		loading: state.loading,
-		tracks: state.tracks,
-		error: state.error,
-		currentTrackID: state.currentTrackID,
+		loading: state.music.loading,
+		tracks: state.music.tracks,
+		error: state.music.error,
+		currentTrackID: state.music.currentTrackID,
 	};
 };
 

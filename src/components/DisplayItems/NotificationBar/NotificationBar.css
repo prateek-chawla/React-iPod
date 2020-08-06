@@ -6,11 +6,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    top: 0;
     color: white;
     padding: 0 1rem;
     font-size: 0.8rem;
+    z-index: 1;
 }
 
 .icons{

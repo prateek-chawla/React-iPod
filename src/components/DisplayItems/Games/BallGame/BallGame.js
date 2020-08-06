@@ -80,9 +80,9 @@ const BallGame = props => {
 
 const mapStateToProps = state => {
 	return {
-		moveUp: state.gameMoveUp,
-		moveDown: state.gameMoveDown,
-		selectPressed: state.gameSelectPressed,
+		moveUp: state.games.gameMoveUp,
+		moveDown: state.games.gameMoveDown,
+		selectPressed: state.games.gameSelectPressed,
 	};
 };
 

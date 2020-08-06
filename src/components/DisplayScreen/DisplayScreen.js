@@ -29,8 +29,8 @@ const displayScreen = props => {
 
 const mapStateToProps = state => {
 	return {
-		isAppDrawerOpen: state.isAppDrawerOpen,
-		currentMenuItem: state.currentMenuItem,
+		isAppDrawerOpen: state.appDrawer.isAppDrawerOpen,
+		currentMenuItem: state.appDrawer.currentMenuItem,
 	};
 };
 
