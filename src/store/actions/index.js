@@ -6,8 +6,9 @@ export {
 	bwdBtnPressed,
 	selectBtnPressed,
 	playPauseBtnPressed,
+} from "./wheelActions";
+
+export {
 	fetchTracks,
 	resetNowPlaying
-} from "./actionCreators";
-
-
+} from "./musicActions";
