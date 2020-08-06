@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 
+import BirdImg from "../../../../assets/images/bird.png";
+
 import "./BallGame.css";
 
 const BallGame = props => {
@@ -72,7 +74,12 @@ const BallGame = props => {
 	);
 
 	return gameEnded ? (
-		<div>Score {Math.floor(scoreRef.current)} Play Again?</div>
+		<div className="gameResult">
+			<div className="score">
+				Score {Math.floor(scoreRef.current)}
+			</div>
+				Play Again?
+		</div>
 	) : (
 		game
 	);

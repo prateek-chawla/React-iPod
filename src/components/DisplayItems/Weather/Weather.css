@@ -10,14 +10,17 @@
 .weatherIcon {
 	width: 120px;
 	height: auto;
+	margin: -1rem;
 }
 
 .weatherDesc {
 	font-size: 1rem;
-	color: #777;
+	color: #555;
 	text-transform: capitalize;
 }
 
 .weatherTemp {
 	font-size: 2rem;
+	color: #444;
+	font-weight: bolder;
 }

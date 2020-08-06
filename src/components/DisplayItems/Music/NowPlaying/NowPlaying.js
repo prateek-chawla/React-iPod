@@ -33,11 +33,13 @@ const NowPlaying = props => {
 	const pauseIcon = <i className="fas fa-pause"></i>;
 	return (
 		<div className="NowPlaying">
-			<img src={props.track.imageUrl} alt="Album Art" />
-			<div>{props.track.name}</div>
-			<div>{props.track.artist}</div>
+			<div className="nowPlayingImg">
+				<img className="nowPlayingImg" src={props.track.imageUrl} alt="Album Art" />
+				<div className="nowPlayingIcon">{isPlaying ? pauseIcon : playIcon}</div>
+			</div>
+			<div className="nowPlayingName">{props.track.name}</div>
+			<div className="nowPlayingArtist">{props.track.artist}</div>
 			<audio ref={trackRef} src={props.track.songUrl} />
-			{isPlaying ? pauseIcon : playIcon}
 		</div>
 	);
 };

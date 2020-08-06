@@ -4,4 +4,5 @@
 	height: calc(180px);
     justify-content: center;
 	overflow-y: auto;
+	justify-items: center;
 }

@@ -1,3 +1,40 @@
-.NowPlaying{
-    height: 210px;
+.NowPlaying {
+	height: 210px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.nowPlayingImg {
+	width: 120px;
+	height: auto;
+	border-radius: 5%;
+	position: relative;
+}
+.nowPlayingName {
+	margin-top: 0.6rem;
+}
+.nowPlayingArtist {
+    font-size: 0.8rem;
+    color: #444;
+}
+
+.nowPlayingIcon {
+	position: absolute;
+	top: 100%;
+	left: 100%;
+	transform: translate(-60%, -80%);
+	line-height: 30px;
+	font-size: 0.7rem;
+	height: 30px;
+	width: 30px;
+	background-color: #777;
+	color: ivory;
+	text-align: center;
+	border-radius: 50%;
+}
+
+.fa-play{
+    margin-left: 4px;
 }

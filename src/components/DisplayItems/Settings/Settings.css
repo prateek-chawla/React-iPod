@@ -1,0 +1,10 @@
+.Settings{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    color: gray;
+}

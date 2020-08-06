@@ -1,16 +1,21 @@
 #gameArea {
 	height: 210px;
 	width: 100%;
-	background-color: #eee;
+	background-color: #777;
 	overflow: hidden;
 	border-bottom-left-radius: 1rem;
 	border-bottom-right-radius: 1rem;
+	box-shadow: 0px 0px 5px black inset;
+	background: url('../../../../assets/images/bg.png');
+	background-size: cover;
 }
 
 #ball {
 	width: 25px;
 	height: 25px;
-	background-color: red;
+	background: url('../../../../assets/images/bird.png');
+	background-size: cover;
+	background-position: center center;
 	border-radius: 50%;
 	position: relative;
 	top: 50%;
@@ -20,7 +25,8 @@
 
 #pillar {
 	position: relative;
-	background: #000;
+	background: #353567;
+	background: url('../../../../assets/images/pillar.jpg');
 	height: 100%;
 	width: 25px;
 	top: -25px;
@@ -30,10 +36,28 @@
 
 #block {
 	position: relative;
-	background-color: #eee;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	background-color: #000;
 	height: 70px;
 	width: 25px;
 	top: 50%;
+}
+
+.gameResult{
+	height: 210px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #555;
+}
+
+.score{
+	font-size: 2rem;
+	color: #333;
+	font-weight: 550;
 }
 
 @keyframes animate-pillar {

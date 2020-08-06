@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Apple Font";
-	src: url("./fonts/apple-font.otf") format("opentype");
+	src: url("./assets/fonts/apple-font.otf") format("opentype");
 }
 .App {
 	box-sizing: border-box;

@@ -19,18 +19,20 @@ const MusicLibrary = props => {
 			currentTrackRef.current.scrollIntoView({ behaviour: "smooth" });
 	}, [currentTrackRef.current]);
 
+	let spinner = <div className='centerSpinner'><Spinner /></div>
+
 	let musicLibrary = (
 		<Grid nCols={3} gap={"0.5rem"} rowHeight={"85px"}>
 			{props.tracks &&
 				props.tracks.map(track => {
 					const trackProperties = {};
 					if (track.id === props.currentTrackID) {
-						trackProperties.className = "track active";
+						trackProperties.className = "track activeTrack";
 						trackProperties.ref = currentTrackRef;
 					}
 
 					return (
-						<div className="track inactive" key={track.id} {...trackProperties}>
+						<div className="track inactiveTrack" key={track.id} {...trackProperties}>
 							<div className="trackName">{track.name}</div>
 							<img className="trackImage" alt={track.name} src={track.imageUrl} />
 						</div>
@@ -44,7 +46,7 @@ const MusicLibrary = props => {
 		musicLibrary = <div>Error</div>;
 	}
 
-	return props.loading ? <Spinner /> : musicLibrary;
+	return props.loading ? spinner : musicLibrary;
 };
 
 const mapStateToProps = state => {
