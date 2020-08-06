@@ -1,25 +1,32 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 
-import Spinner from '../../../UI/Spinner/Spinner'
-import Grid from '../../../UI/Grid/Grid'
+import Spinner from "../../../UI/Spinner/Spinner";
+import Grid from "../../../UI/Grid/Grid";
 
-import * as actions from '../../../../store/actions'
+import * as actions from "../../../../store/actions";
 
 import "./MusicLibrary.css";
 
 const MusicLibrary = props => {
+	
 	const currentTrackRef = useRef(null);
+	const { currentTrackID, fetchTracks } = props;
+
 	useEffect(() => {
-		props.fetchTracks();
-	}, []);
+		fetchTracks();
+	}, [fetchTracks]);
 
 	useEffect(() => {
 		if (currentTrackRef.current)
-			currentTrackRef.current.scrollIntoView({ behaviour: "smooth" });
-	}, [currentTrackRef.current]);
+			currentTrackRef.current.scrollIntoView(false, { behaviour: "smooth" });
+	}, [currentTrackID]);
 
-	let spinner = <div className='centerSpinner'><Spinner /></div>
+	let spinner = (
+		<div className="centerSpinner">
+			<Spinner />
+		</div>
+	);
 
 	let musicLibrary = (
 		<Grid nCols={3} gap={"0.5rem"} rowHeight={"85px"}>

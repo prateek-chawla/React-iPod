@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 
-import BirdImg from "../../../../assets/images/bird.png";
-
 import "./BallGame.css";
 
 const BallGame = props => {

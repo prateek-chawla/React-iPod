@@ -15,15 +15,14 @@ const initialState = {
 let newCurrentTrackIndex = null;
 
 const musicReducer = (state = initialState, action) => {
-
-    if (action.type === actionTypes.RESET_NOW_PLAYING) {
+	if (action.type === actionTypes.RESET_NOW_PLAYING) {
 		return {
 			...state,
 			isNowPlayingOpen: false,
 			nowPlayingTrack: null,
 		};
-    }
-    
+	}
+
 	if (!action.isAppDrawerOpen && action.currentMenuItem === "Music") {
 		switch (action.type) {
 			case actionTypes.FETCH_TRACKS_START:
@@ -90,6 +89,7 @@ const musicReducer = (state = initialState, action) => {
 						nowPlayingTrack: state.tracks[state.currentTrackIndex],
 					};
 				}
+			// eslint-disable-line no-fallthrough
 			case actionTypes.BWD_PRESSED:
 				if (state.isNowPlayingOpen) {
 					newCurrentTrackIndex =
@@ -103,6 +103,7 @@ const musicReducer = (state = initialState, action) => {
 						nowPlayingTrack: state.tracks[state.currentTrackIndex],
 					};
 				}
+			// eslint-disable-line no-fallthrough
 			default:
 				return state;
 		}

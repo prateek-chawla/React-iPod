@@ -7,14 +7,15 @@ import "./NowPlaying.css";
 
 const NowPlaying = props => {
 	const trackRef = useRef(null);
+	const { resetNowPlaying, track } = props;
 
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	useEffect(() => {
 		return () => {
-			props.resetNowPlaying();
+			resetNowPlaying();
 		};
-	}, []);
+	}, [resetNowPlaying]);
 
 	useEffect(() => {
 		if (isPlaying && !trackRef.current.paused) trackRef.current.pause();
@@ -27,7 +28,7 @@ const NowPlaying = props => {
 			setIsPlaying(true);
 			trackRef.current.play();
 		}
-	}, [props.track]);
+	}, [track]);
 
 	const playIcon = <i className="fas fa-play"></i>;
 	const pauseIcon = <i className="fas fa-pause"></i>;
