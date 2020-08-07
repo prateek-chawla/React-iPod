@@ -18,6 +18,10 @@
 	left: 0;
 }
 
+.wheel__item :hover{
+	cursor: pointer;
+}
+
 /* Centre Button */
 .select-btn {
 	top: 50%;

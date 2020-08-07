@@ -17,6 +17,7 @@
 
 /* Track Name */
 .nowPlayingName {
+	text-align: center;
 	margin-top: 0.6rem;
 	width: 80%;
 	white-space: nowrap;
@@ -25,7 +26,7 @@
 }
 
 /* Track Artist */
-.nowPlayingArtist {
+.nowPlayingArtist , .playTime{
     font-size: 0.8rem;
     color: var(--primary-text);
 }
