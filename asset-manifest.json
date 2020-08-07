@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/React-iPod/static/css/main.de03b178.chunk.css",
-    "main.js": "/React-iPod/static/js/main.633d9aea.chunk.js",
-    "main.js.map": "/React-iPod/static/js/main.633d9aea.chunk.js.map",
+    "main.css": "/React-iPod/static/css/main.f9679fd5.chunk.css",
+    "main.js": "/React-iPod/static/js/main.fe11658a.chunk.js",
+    "main.js.map": "/React-iPod/static/js/main.fe11658a.chunk.js.map",
     "runtime-main.js": "/React-iPod/static/js/runtime-main.bd5aab2d.js",
     "runtime-main.js.map": "/React-iPod/static/js/runtime-main.bd5aab2d.js.map",
-    "static/js/2.e868110b.chunk.js": "/React-iPod/static/js/2.e868110b.chunk.js",
-    "static/js/2.e868110b.chunk.js.map": "/React-iPod/static/js/2.e868110b.chunk.js.map",
+    "static/js/2.95dfe97f.chunk.js": "/React-iPod/static/js/2.95dfe97f.chunk.js",
+    "static/js/2.95dfe97f.chunk.js.map": "/React-iPod/static/js/2.95dfe97f.chunk.js.map",
     "index.html": "/React-iPod/index.html",
-    "precache-manifest.a7e5d6e1af5da73ca4e282e09d88a5b3.js": "/React-iPod/precache-manifest.a7e5d6e1af5da73ca4e282e09d88a5b3.js",
+    "precache-manifest.3114645fe7a943569915127b0e092d47.js": "/React-iPod/precache-manifest.3114645fe7a943569915127b0e092d47.js",
     "service-worker.js": "/React-iPod/service-worker.js",
-    "static/css/main.de03b178.chunk.css.map": "/React-iPod/static/css/main.de03b178.chunk.css.map",
-    "static/js/2.e868110b.chunk.js.LICENSE.txt": "/React-iPod/static/js/2.e868110b.chunk.js.LICENSE.txt",
+    "static/css/main.f9679fd5.chunk.css.map": "/React-iPod/static/css/main.f9679fd5.chunk.css.map",
+    "static/js/2.95dfe97f.chunk.js.LICENSE.txt": "/React-iPod/static/js/2.95dfe97f.chunk.js.LICENSE.txt",
     "static/media/Games.png": "/React-iPod/static/media/Games.839a2c83.png",
     "static/media/Music.png": "/React-iPod/static/media/Music.2d2f3b57.png",
     "static/media/Settings.png": "/React-iPod/static/media/Settings.d5e51f97.png",
@@ -21,8 +21,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bd5aab2d.js",
-    "static/js/2.e868110b.chunk.js",
-    "static/css/main.de03b178.chunk.css",
-    "static/js/main.633d9aea.chunk.js"
+    "static/js/2.95dfe97f.chunk.js",
+    "static/css/main.f9679fd5.chunk.css",
+    "static/js/main.fe11658a.chunk.js"
   ]
 }

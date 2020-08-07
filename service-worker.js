@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/React-iPod/precache-manifest.a7e5d6e1af5da73ca4e282e09d88a5b3.js"
+  "/React-iPod/precache-manifest.3114645fe7a943569915127b0e092d47.js"
 );
 
 self.addEventListener('message', (event) => {
