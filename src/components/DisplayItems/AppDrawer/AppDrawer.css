@@ -1,7 +1,7 @@
 /* Active App Drawer Item */
 .active {
-	background-color: rgba(0, 0, 0, 0.2);
-	color: lightgrey;
+	background-color: var(--app-active-icon);
+	color: var(--app-active);
 	animation: shake 0.7s ease;
 }
 

@@ -35,7 +35,7 @@
 }
 
 .activeTrack {
-	background: rgba(0, 0, 0, 0.2);
+	background: var(--app-active-icon);
 	border-radius: 0;
 }
 

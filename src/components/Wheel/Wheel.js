@@ -7,11 +7,11 @@ import setUpWheelEvents from "./wheelEvents";
 import * as actions from "../../store/actions";
 
 const Wheel = props => {
-	// 		// DOM Reference to Wheel
+	// DOM Reference to Wheel
 	const wheelRef = useRef(null);
 
 	useEffect(() => {
-		// 		// Separate Wheel Events Handler
+		// Separate Wheel Events Handler
 		setUpWheelEvents(wheelRef.current, props.onMoveForward, props.onMoveBackward);
 	}, [setUpWheelEvents]);
 

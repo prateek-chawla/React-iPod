@@ -18,12 +18,16 @@
 /* Track Name */
 .nowPlayingName {
 	margin-top: 0.6rem;
+	width: 80%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 /* Track Artist */
 .nowPlayingArtist {
     font-size: 0.8rem;
-    color: #444;
+    color: var(--primary-text);
 }
 
 /* Play/Pause Icon */
@@ -36,7 +40,7 @@
 	font-size: 0.7rem;
 	height: 30px;
 	width: 30px;
-	background-color: #777;
+	background-color: var(--active-setting);
 	color: ivory;
 	text-align: center;
 	border-radius: 50%;

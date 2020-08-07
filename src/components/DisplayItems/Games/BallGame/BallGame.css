@@ -59,8 +59,12 @@
 }
 
 .score{
+	background-color: var(--score-bg);
+	padding: 0.4rem 1.2rem;
+	border-radius: 1.2rem;
+	margin-bottom: 0.5rem;
 	font-size: 2rem;
-	color: #333;
+	color: var(--primary-text);
 	font-weight: 550;
 }
 

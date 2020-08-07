@@ -6,11 +6,11 @@
 	justify-content: center;
 	align-items: center;
 	font-size: 0.9rem;
-	color: #444;
+	color: var(--primary-text);
 }
 
 .errorIcon {
 	font-size: 4rem;
-	color: #555;
+	color: var(--secondary-text);
 	margin-bottom: 1rem;
 }

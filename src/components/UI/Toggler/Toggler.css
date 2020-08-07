@@ -1,0 +1,69 @@
+/* Toggle Switch */
+
+.switch-container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding-right: 0.7rem;
+}
+
+#switch {
+	display: none;
+}
+
+.switch-label {
+	display: flex;
+	width: 1.8rem;
+	height: 1rem;
+	border: 2px solid var(--toggler-bg);
+	background-color: var(--toggler-bg);
+	border-radius: 0.75rem;
+	align-items: center;
+	box-shadow: 0 0 0.2rem rgb(22, 22, 22);
+	transition: all 0.5s;
+}
+
+/* Cross on top of Button */
+.toggler {
+	width: 1rem;
+	height: 1rem;
+	background-color: rgb(240, 240, 240);
+	border-radius: 50%;
+	position: absolute;
+	margin-left: 0.1rem;
+	box-shadow: 0 0 0.4rem rgb(22, 22, 22);
+	transition: all 0.5s;
+}
+
+/* X Lines on top of Toggler */
+.lines {
+	position: absolute;
+	display: inline-flex;
+	width: 0.5rem;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 1px;
+	background-color: gray;
+	transition: all 0.5s ease;
+}
+
+.vertical-line {
+	height: 0.5rem;
+	width: 0.5px;
+}
+
+/* Chnage label color if switch is On */
+#switch:checked + .switch-label {
+	background-color: rgb(211, 211, 62);
+}
+
+/* Transition toggler lines if switch is On */
+#switch:checked + .switch-label .toggler {
+	transform: translateX(0.65rem) rotate(225deg);
+	box-shadow: 0 0 0.5rem rgb(87, 83, 83);
+}
+
+#switch:not(:checked) + .switch-label .toggler .lines {
+	opacity: 0;
+}

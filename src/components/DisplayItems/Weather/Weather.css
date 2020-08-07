@@ -17,13 +17,13 @@
 
 .weatherDesc {
 	font-size: 1rem;
-	color: #555;
+	color: var(--secondary-text);
 	text-transform: capitalize;
 }
 
 /* Temperature */
 .weatherTemp {
 	font-size: 2rem;
-	color: #444;
+	color: var(--primary-text);
 	font-weight: bolder;
 }

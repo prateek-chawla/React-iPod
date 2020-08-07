@@ -22,7 +22,7 @@ const Weather = props => {
 			const latitude = position.coords.latitude;
 			const longitude = position.coords.longitude;
 			//Fetch Eather Data
-			const url = `https://api.openweathermap.org/data/2.5/weathe?lat=${latitude}&lon=${longitude}&appid=${key}`;
+			const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
 			try {
 				const res = await axios.get(url);
 				const tempKelvin = res.data.main.temp;
