@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a73d3af0e98833223a130e334319b0a0",
+    "revision": "dfa818a220ec79dac547a50e3355b363",
     "url": "/React-iPod/index.html"
   },
   {
-    "revision": "2997e9dae307217d324f",
-    "url": "/React-iPod/static/css/main.f9679fd5.chunk.css"
+    "revision": "3c82ff350040b7bdda0e",
+    "url": "/React-iPod/static/css/main.787fe4c2.chunk.css"
   },
   {
     "revision": "05af40175eeef7e4574e",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-iPod/static/js/2.95dfe97f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2997e9dae307217d324f",
+    "revision": "3c82ff350040b7bdda0e",
     "url": "/React-iPod/static/js/main.fe11658a.chunk.js"
   },
   {
