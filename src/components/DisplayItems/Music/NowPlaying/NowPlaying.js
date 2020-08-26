@@ -39,6 +39,7 @@ const NowPlaying = props => {
 		if (isPlaying && !trackRef.current.paused) trackRef.current.pause();
 		else if (trackRef.current.paused) trackRef.current.play();
 		setIsPlaying(!isPlaying);
+		// eslint-disable-next-line
 	}, [props.togglePlay]);
 
 	useEffect(() => {

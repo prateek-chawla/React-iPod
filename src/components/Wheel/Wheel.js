@@ -23,9 +23,10 @@ const Wheel = props => {
 	useEffect(() => {
 		// Separate Wheel Events Handler
 		setUpWheelRotateEvents(wheelRef.current, onMoveForward, onMoveBackward);
-
 		setUpWheelClickEvents(btnRefs, clickEvents);
-	}, [setUpWheelRotateEvents, setUpWheelClickEvents]);
+
+		//eslint-disable-next-line
+	}, [btnRefs]);
 
 	return (
 		<div id="wheel" ref={wheelRef}>
